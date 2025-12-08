@@ -1,0 +1,516 @@
+<!DOCTYPE html>
+<html>
+<head>
+   <meta charset="utf-8">
+   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+   <title>Assignment 2</title>
+   <script src="js/index.js" ></script>
+   <script src="https://cdn.tailwindcss.com"></script>
+   
+
+   <link href="css/output.css" rel="stylesheet">
+</head>    
+<body class="font-serif bg-gradient-to-t from-[#FFD56B] to-[#FFB0E2] flex flex-col justify-between min-h-screen">
+   <header class="bg-white font-sans shadow-md items-center relative">
+      <nav class="flex justify-between items-center w-[95%] h-[90%] mx-auto">
+         <div>
+            <button class="navbut" data-view="home"><img src="images/BingusLogo2.png" alt="Our Logo" class="navbut w-32" data-view="home"></button>
+         </div>
+         <div class="">
+            <ul class="flex items-center gap-[3vw]">
+               <li>
+                  <button class="navbut text-lg hover:text-gray-600" data-view="home">Home</button>
+               </li>
+               <li>
+                  <button class="navbut text-lg hover:text-gray-600" data-view="browse">Browse</button>
+               </li>
+               <li>
+                  <button class="navbut text-lg hover:text-gray-600" data-view="about">About</button>
+               </li>
+            </ul>
+         </div>
+         <div class="">
+            <button class="navbut text-lg hover:text-gray-600" data-view="cart">Cart</button>
+            <button class="navbut cartCount bg-[#fc2377] text-white px-2.5 py-0.5 rounded-full" data-view="cart">0</button>
+         </div>
+      </nav>
+   </header>
+   <main class="mb-auto grow flex-1">
+      <div id="home" class="h-full mx-auto bg-white font-sans shadow-md pb-5">
+         <div class="bg-[url('images/clothing.png')] h-[50vh] bg-cover bg-center shadow-md flex items-center justify-center">
+            <div class="text-white absolute left-1/3 translate-x-8">
+               <h1 class="text-6xl pb-5">
+                  BUY OUR STUFF
+               </h1>
+               <p class="text-2xl">
+                  We have clothes that will take you from L Rizz to Level 67 Rizzlord. <br><br>
+                  
+                  Just have a look.
+               </p>
+            </div>
+         </div>
+         <div class="flex flex-col items-center justify-center">
+            <p class="text-gray-600 font-serif pt-8 pb-5 max-w-lg text-center">
+               Here at Bingus Clothes, we use cutting edge driponomics to mathematically optimize our clothes.
+               With our sprawling, 300-acre, 2km-deep underground research facility, we can analyze every single variable making up your drip, 
+               to deliver you the scientifically-proven best product, every time.
+               <br><br>Interested in our merchandise? Have a look at
+            </p>
+            <h1 class="text-3xl font-bold pb-4">
+               Have a look at our
+            </h1>
+            <div id="jumpIntoCatalog" class="flex items-center items-stretch justify-between w-2/3 rounded-xl w-lg h-48 border border-solid border-grey-600 text-white text-2xl font-bold">
+               <button class="navbut jumperButton bg-[url('images/Swimwear.jpg')] bg-cover rounded-md flex-auto flex items-end justify-end shadow-lg m-3 p-4 hover:brightness-50" data-view="browse" data-cat="Swimwear">
+                  <p>Swimwear</p>
+               </button>
+               <button class="navbut jumperButton bg-[url('images/Shoes.jpg')] bg-cover rounded-md flex-auto shadow-lg m-3 flex items-end justify-end p-4 hover:brightness-50" data-view="browse" data-cat="Shoes">
+                  <p>Shoes</p>
+               </button>
+               <button class="navbut jumperButton bg-[url('images/Dresses.jpg')] bg-cover rounded-md flex-auto shadow-lg m-3 flex items-end justify-end p-4 hover:brightness-50" data-view="browse" data-cat="Dresses">
+                  <p>Dresses</p>
+               </button>
+            </div>
+            <hr>
+            <p class="text-gray-600 font-serif pt-8 pb-5">
+               Would you like to know more? Check out the
+            </p>
+            <button class="navbut cartCount bg-[#ccaf74] hover:bg-[#a38c5c] text-2xl text-white px-2.5 py-0.5 rounded-full" data-view="browse">
+                  Full Catalog
+            </button>
+         </div>
+      </div>
+
+
+
+      <div id="browse" class="hidden bg-white h-full mx-auto font-sans shadow-md">
+         <div class="bg-[url('images/greyscale.jpeg')] h-[20vh] bg-cover bg-center shadow-md flex items-center">
+            <div class="text-white">
+               <h1 class="text-3xl pb-5 pl-20">
+                  Our Vast Compendium
+               </h1>
+            </div>
+         </div>
+         <div class="flex flex-row">
+            <div id="browseSidebar" class="w-1/5 m-4 mr-8">
+               <h1 class="text-2xl" id="departmentsHeader">Departments</h1>
+               <button class="filterBut flex justify-between items-center w-full pt-5" id="gender">
+                  <h2 class="text-lg translate-x-2">Gender</h2>
+                  <h2 class="dropArrow text-lg transition-transform duration-300">▲</h2>
+               </button>
+               <div id="genderDiv" class="translate-x-2 pl-4 items-center max-h-0 overflow-hidden transition-all duration-300 border-l-2 border-grey-600" style="max-height: 0px;">
+                  <div>
+                     <input id="mens" type="checkbox" value="mens" data-attr="gender" data-name="Male" class="w-4 h-4 border bg-neutral-secondary-medium checked:accent-[#fc2377]">
+                     <label for="mens" class="select-none ms-2 text-lg">Male</label>
+                  </div>
+
+                  <div>
+                     <input id="womens" type="checkbox" value="womens" data-attr="gender" data-name="Female" class="w-4 h-4 border bg-neutral-secondary-medium checked:accent-[#fc2377]">
+                     <label for="womens" class="select-none ms-2 text-lg">Female</label>
+                  </div>
+               </div>
+
+
+               <button class="filterBut flex justify-between items-center w-full pt-5" id="category">
+                  <h2 class="text-lg translate-x-2">Category</h2>
+                  <h2 class="dropArrow text-lg transition-transform duration-300">▲</h2>
+               </button>
+               <div id="categoryDiv" class="translate-x-2 pl-4 items-center max-h-0 overflow-hidden transition-all duration-300 border-l-2 border-grey-600" style="max-height: 0px;">
+                  <template id="categoryButtonTemplate">
+                     <div>
+                        <input id="Bottoms" type="checkbox" value="Bottoms" data-attr="category" data-name="Bottoms" class="w-4 h-4 border bg-neutral-secondary-medium checked:accent-[#fc2377]">
+                        <label for="Bottoms" class="select-none ms-2 text-lg">Bottoms</label>
+                     </div>
+                  </template>
+               </div>
+
+
+               <button class="filterBut flex justify-between items-center w-full pt-5" id="size">
+                  <h2 class="text-lg translate-x-2">Size</h2>
+                  <h2 class="dropArrow text-lg transition-transform duration-300">▲</h2>
+               </button>
+               <div id="sizeDiv" class="translate-x-2 pl-4 items-center max-h-0 overflow-hidden transition-all duration-300 border-l-2 border-grey-600" style="max-height: 0px;">
+                  <!--Unfortunately size types are hardcoded. 
+                  It'd be a huge pain to dynamically generate categories from a template and insert a dozen templates into it :/ -->
+                  <div id="sizeGroup-Regular">
+                     <p class="text-lg -translate-x-2 text-gray-600">Regular</p>
+                     <template id="sizeButtonTemplate">
+                        <div>
+                           <input id="size-XS" type="checkbox" value="XS" data-attr="size" data-name="Extra Small" class="w-4 h-4 border bg-neutral-secondary-medium checked:accent-[#fc2377]">
+                           <label for="size-XS" class="select-none ms-2 text-lg">Extra Small</label>
+                        </div>
+                     </template>
+                  </div>
+                  <div id="sizeGroup-Bottoms">
+                     <p class="text-lg -translate-x-2 text-gray-600">Bottoms</p>
+
+                  </div>
+                  <div id="sizeGroup-Adaptable">
+                     <p class="text-lg -translate-x-2 text-gray-600">Adaptable</p>
+
+                  </div>
+                  <div id="sizeGroup-Shoes">
+                     <p class="text-lg -translate-x-2 text-gray-600">Shoes</p>
+
+                  </div>
+               </div>
+
+
+               <button class="filterBut flex justify-between items-center w-full pt-5" id="colours">
+                  <h2 class="text-lg translate-x-2">Colours</h2>
+                  <h2 class="dropArrow text-lg transition-transform duration-300">▲</h2>
+               </button>
+               <div id="coloursDiv" class="translate-x-2 pl-4 items-center max-h-0 overflow-hidden transition-all duration-300 border-l-2 border-grey-600" style="max-height: 0px;">
+                  <template id="colorButtonTemplate">
+                     <div class="flex items-center pb-2 pt-2">
+                        <input id="#00000" type="checkbox" value="#00000" data-attr="colour" data-name="Black" class="appearance-none rounded-full w-6 h-6 border bg-[#000000] checked:ring checked:ring-offset-2 checked:ring-gray-600">
+                        <label for="#00000" class="select-none ms-2 text-lg">Black</label>
+                     </div>
+                  </template>
+               </div>
+            </div>
+
+
+            <div id="browseItems" class="w-2/3 flex flex-col justify-start text-center mt-4">
+               <div id="itemFilterList">
+                  <h1 class="text-2xl" id="filterBoxHeader">Browse</h1>
+                  <div class="flex flex-row justify-between">
+                     <div id="filterWidget" class="flex items-start flex-wrap rounded-xl w-5/6 ml-5 mr-2 border border-dotted border-grey-600 bg-gray-100">
+                        <template id="widgetTemplate">
+                           <button id="widget-template" data-key="#00000" data-filterType="e" class="rounded-xl shadow-sm hover:bg-gray-500 bg-gray-400 m-1 p-1 inline-flex text-white hover:text-white">
+                              <p>X Black</p>
+                           </button>
+                        </template>
+                     </div>
+
+
+                     <div>
+                        <form class="max-w-sm mx-auto">
+                           <label for="sortMode" class="block mb-2.5 text-m font-medium text-heading">Sort Items</label>
+                           <select id="sortMode" class="block rounded-md w-full px-3 py-2.5 bg-neutral-secondary-medium border border-default-medium text-heading text-sm rounded-base focus:ring-brand focus:border-brand shadow-xs placeholder:text-body">
+                              <option value="name">Name (A-Z)</option>
+                              <option value="priceLo">Price (Low to High)</option>
+                              <option value="priceHi">Price (High to Low)</option>
+                              <option value="category">Category</option>
+                           </select>
+                        </form>
+                     </div>
+
+                  </div>
+                  
+                  <template id="catalogItemTemplate">
+                     <div class="catalogCard navbut shadow-md rounded-xl flex flex-col w-1/4 h-80 m-5 bg-gray-100 hover:bg-gray-200" data-view="product">
+                        <button data-value="T067" class="itemImageDiv h-2/3 overflow-hidden">
+                           <img src="images/clothes-item-template.png" class="itemImage rounded-xl object-cover w-full object-center">
+                        </button>
+                        <div class="text-left p-2 flex flex-row justify-between">
+                           <button data-value="T067" class="itemInfoDiv text-left">
+                              <p class="itemName text-2xl">Skibidi Sigma</p>
+                              <p class="itemPrice text-xl text-gray-600">$9.99</p>
+                           </button>
+                        </div>
+                     </div>
+                  </template>
+                  <template id="failureItemTemplate">
+                     <div class="w-full h-full flex flex-col justify-center">
+                        <h1 class="text-5xl text-gray-400 mt-6">NO ITEMS MATCH YOUR SEARCH.</h1>
+                        <br>
+                        <h1 class="text-5xl text-gray-400 mt-6">YOU GET NOTHING.</h1>
+                        <br>
+                        <h1 class="text-5xl text-gray-400 mt-6">GOOD DAY SIR.</h1>
+                     </div>
+
+                  </template>
+                  <div id="catalog" class="flex flex-row flex-wrap justify-start">
+                  </div>
+               </div>
+            </div>
+               
+         </div>
+
+
+
+      </div>
+
+
+
+      <div id="product" class="hidden w-3/4 bg-white mx-auto font-sans shadow-md">
+         <div id="breadcrumb" class="p-2 pl-5 text-lg text-gray-400">
+            skibidi gyatt rizz
+         </div>
+
+         <div class="h-full flex flex-row">
+            <div class="flex-auto flex flex-col w-1/4 p-5 pt-0 pb-0">
+               <div id="prodMiniGallery" class="flex items-start flex-wrap w-full mt-2 border-2 border-grey-800">
+                  <img id="prodImageSwappable" src="images/clothes-item-template.png" class="w-20 h-20  m-2 ring-1 ring-offset-2 ring-gray-600">
+                  <img src="images/Placeholder.jpg" class="w-20 h-20  m-2">
+                  <img src="images/triple_t.jpg" class="w-20 h-20 m-2">
+                  <img src="images/smart-man-with-glasses-wallpaper-download.jpg" class="w-20 m-2">
+               </div>
+               <div class="h-500">
+                  <img src="images/clothes-item-template.png" id="prodHeroImage" class="w-full mt-2">
+               </div>
+            </div>
+            <div class="flex-auto w-2/4 p-5 pt-0 pb-0">
+               <h1 class="text-5xl mb-1" id="prodName">Imagine if Ninja Got</h1>
+               <p id="prodCat" class="text-xl mb-5 text-gray-400">A Low Taper Fade</p>
+               <p id="prodPrice" class="text-4xl text-gray-600">$67.67</p>
+               <hr class="mt-4 mb-4">
+               <p class="text-lg font-bold">Material</p>
+               <p id="prodMaterial" class="text-lg text-gray-600 mb-3">IDK LOL</p>
+
+               <p class="text-lg font-bold">Colors</p>
+
+               <template id="prodColourTemplate">
+                     <input type="checkbox" id="prodColourButton-" class="prodColourButton appearance-none rounded-full w-6 h-6 border bg-[#000000] ring-1 ring-offset-2 ring-gray-500 checked:ring-2 checked:ring-offset-2 checked:ring-gray-600" >
+               </template>
+               <div id="prodColours" class="m-3">
+               </div>
+
+               <p class="text-lg font-bold mt-3">Sizes</p>
+
+               <template id="prodSizeTemplate">
+                  <div>
+                     <input type="checkbox" id="prodBox-" class="sizeButton hidden peer" value="idk">
+                     <label for="prodBox-" class="sizeButton m-1 rounded-md p-1 min-w-12 h-12 border text-2xl flex items-center justify-center shadow-md hover:bg-gray-400 peer-checked:bg-gray-600 peer-checked:text-white">Size</label>
+                  </div>
+               </template>
+               <div id="prodSizes" class="flex flex-row flex-wrap">
+                  
+               </div>
+               <hr class="mt-4 mb-4">
+               <p id="prodDesc" class="font-serif text-lg mb-5">This is a placeholder. This product does not exist.</p>
+
+
+               <div id="productBuyBar" class="rounded-xl border border-grey-600 w-2/3 flex flex-row">
+                  <button class="p-2 w-10 hover:bg-gray-200 txt-lg rounded-l-xl" id="decQuant">-</button>
+                  <input type="number" class="quantity-input text-center w-10 txt-lg" id="numQuantity" value="1" min="0" max="99">
+                  <button class="p-2 w-10 hover:bg-gray-200 txt-lg" id="incQuant">+</button>
+                  <button class="p-2 bg-[#fc2377] text-white txt-lg w-full rounded-r-xl" id="prodAddToCart">Add To Cart</button>
+               </div>
+            </div>
+         </div>
+         <p class="text-2xl font-bold mt-3 text-center">
+            Related Products
+         </p>
+         <div id="relatedProducts" class="flex flex-row flex-wrap justify-center">
+            
+         </div>
+   
+
+
+      </div>
+
+
+      
+      <div id="cart" class="hidden h-full flex flex-col w-5/6 bg-white mx-auto font-sans shadow-md">
+         <div class="flex-auto flex flex-col p-5">
+            <h1 class="text-center text-3xl font-bold mb-4">Cart</h1>
+            <hr class="mb-4">
+
+            <template id="CartItemTemplate">
+               <tr data-prodid="0" class="cartRow">
+                  <td class="w-32 p-2">
+                     <img src="images/clothes-item-template.png" class="h-32 w-32">
+                  </td>
+                  <td class="h-32">
+                     <div class="flex flex-col justify-between h-32">
+                        <div>
+                           <p class="cartItemName text-2xl font-bold">ProductName</p>
+                        </div>
+                        <div>
+                           <p class="cartItemCategory text-lg text-gray-600">ProductCat</p>
+                        </div>
+                        <button class="cartItemRemove text-lg text-rose-500 text-left w-fit hover:text-[#7a1f2f]">Remove</button>
+                     </div>
+                  </td>
+
+                  <td class="h-32">
+                     <div class="flex flex-col justify-between h-32 items-center">
+                        <p class="text-2xl font-bold">Colour</p>
+                        <div class="cartItemColour rounded-full w-8 h-8 pr-5 border bg-[#000000] ring-1 ring-offset-2 ring-gray-500"></div>
+                        <p class="cartItemColourName text-lg text-gray-600">Colour</p>
+                     </div>
+                  </td>
+                  <td class="h-32">
+                     <div class="flex flex-col justify-between h-32 items-center">
+                        <p class="text-2xl font-bold">Size</p>
+                        <p class="cartItemSize text-3xl text-gray-600">Size</p>
+                        <div></div>
+                     </div>
+                  </td>
+
+                  <td class="h-32">
+                     <div class="flex flex-col justify-between h-32 items-center">
+                        <div>
+                           <p class="text-2xl font-bold">Quantity</p>
+                        </div>
+                        <div class="rounded-xl border border-grey-600 w-fit">
+                           <button class="quantityControl decQuant p-2 w-10 hover:bg-gray-200 txt-lg rounded-l-xl">-</button>
+                           <input type="number" class="numQuantity quantity-input text-center w-10 txt-lg" value="1" min="-1" max="99">
+                           <button class="quantityControl incQuant p-2 w-10 hover:bg-gray-200 txt-lg rounded-r-xl">+</button>
+                        </div>
+                        <div>
+                        </div>
+                        
+                     </div>
+                  </td>
+
+                  <td class="h-32">
+                     <div class="flex flex-col justify-between h-32">
+                        <div>
+                           <p class="text-2xl font-bold">Price</p>
+                        </div>
+                        <p class="cartItemPrice text-lg text-left">$67.67</p>
+                        <div>
+                        </div>
+                        
+                     </div>
+                  </td>
+
+                  <td class="h-32">
+                     <div class="flex flex-col justify-between h-32">
+                        <div>
+                           <p class="text-2xl font-bold">Total</p>
+                        </div>
+                        <p class="cartItemTotal text-lg text-left">$67.67</p>
+                        <div>
+                        </div>
+                        
+                     </div>
+                  </td>
+               </tr>
+            </template>
+            
+            <table id="cartTable">
+            </table>
+         </div>
+         <div class="p-5">
+            <div class="flex-auto flex flex-row p-5" id="shippingBox">
+               <div class="w-1/3 pr-4">
+                  <h1 class="text-center text-3xl font-bold mb-4">Shipping</h1>
+                  <div class="shadow-md rounded-xl bg-gray-100 flex items-center flex-col p-3">
+                     <div class="flex flex-row w-5/6 items-center">
+                        <label for="shippingMode" class="text-2xl">⚙</label>
+                        <select id="shippingMode" class="block rounded-md w-3/4 px-3 py-2.5 mt-1 mb-1 bg-neutral-secondary-medium border border-default-medium text-heading text-sm rounded-base focus:ring-brand focus:border-brand shadow-xs placeholder:text-body">
+                           <option value="standard">Standard</option>
+                           <option value="express">Express</option>
+                           <option value="priority">Priority</option>
+                           <option value="ultraspeed">Brachistochrone</option>
+                           <option value="ghoul">Terrible Ghoul</option>
+                        </select>
+                     </div>
+                     <div class="flex flex-row w-5/6 items-center">
+                        <label for="shippingDest" class="text-2xl">🌐</label>
+                        <select id="shippingDest" class="block rounded-md w-3/4 px-3 py-2.5 mt-1 mb-1 bg-neutral-secondary-medium border border-default-medium text-heading text-sm rounded-base focus:ring-brand focus:border-brand shadow-xs placeholder:text-body">
+                           <option value="canada">Canada</option>
+                           <option value="usa">USA</option>
+                           <option value="international">International</option>
+                           <option value="interplanetary">Interplanetary</option>
+                        </select>
+                     </div>
+                     <p id="shippingDesc" class="text-center text-gray-600 italic">An undead monster will cross the stars to your residence.</p>
+                  </div>
+               </div>
+               <div class="w-2/3" id="orderSummary">
+                  <h1 class="text-center text-3xl font-bold mb-4">Summary</h1>
+                  <hr>
+                  <div class="w-2/4 mx-auto">
+                     <div class="flex flex-row justify-between mt-1">
+                        <div class="w-1/3">
+                           <h1 class="text-right text-2xl">Merchandise</h1>
+                        </div>
+                        
+                        <div class="w-1/3">
+                           <p id="orderMerchandise" class="text-left text-2xl text-gray-600">$5.00</p>
+                        </div>
+                     </div>
+                     <div class="flex flex-row justify-between mt-1">
+                        <div class="w-1/3">
+                           <h1 class="text-right text-2xl">Shipping</h1>
+                        </div>
+                        
+                        <div class="w-1/3">
+                           <p id="orderShipping" class="text-left text-2xl text-gray-600">$5.00</p>
+                        </div>
+                        
+                     </div>
+                     <div class="flex flex-row justify-between mt-1">
+                        <div class="w-1/3">
+                           <h1 class="text-right text-2xl">Tax</h1>
+                        </div>
+                        
+                        <div class="w-1/3">
+                           <p id="orderTax" class="text-left text-2xl text-gray-600">$5.00</p>
+                        </div>
+                     </div>
+                     <div class="flex flex-row justify-between mt-1">
+                        <div class="w-1/3">
+                           <h1 class="text-right text-2xl font-bold">Total</h1>
+                        </div>
+                        
+                        <div class="w-1/3">
+                           <p id="orderTotal" class="text-left text-2xl text-gray-600 font-bold">$5.00</p>
+                        </div>
+                     </div>
+                  </div>
+                  <div class="flex flex-row justify-center w-full pt-6">
+                     <button id="buyTheStuff" class="navbut cartCount bg-[#ccaf74] hover:bg-[#a38c5c] text-2xl text-white px-2.5 py-0.5 rounded-full" data-view="home">
+                        BUY NOW
+                     </button>
+                  </div>
+               </div>
+            </div>
+         </div>
+
+
+      </div>
+      <!--Toast found on Tailwind documentation at https://flowbite.com/docs/components/toast/ -->
+      <dialog id="toastPurchase" class="hidden fixed top-5 right-5 bg-white rounded-xl shadow-lg flex items-center w-full font-sans max-w-sm p-4 text-body bg-neutral-primary-soft rounded-base shadow-xs border border-default transition-opacity duration-200 ease-out">
+         <p>🛒</p>
+         <div class="ms-2.5 text-sm border-s border-default ps-3.5">Successfully bought merchandise.</div>
+         <button id="closeToast" class="ms-auto flex items-center justify-center text-body hover:text-heading bg-transparent box-border border border-transparent hover:bg-neutral-secondary-medium focus:ring-4 focus:ring-neutral-tertiary font-medium leading-5 rounded text-sm h-8 w-8">
+            <span class="sr-only">Close</span>
+            <svg class="w-5 h-5" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="none" viewBox="0 0 24 24"><path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18 17.94 6M18 18 6.06 6"/></svg>
+         </button>
+      </dialog>
+
+      <dialog id="about" class="hidden fixed top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 bg-white font-sans rounded-xl shadow-lg flex flex-col w-3/4 h-3/4 p-4 text-body shadow-m border border-default transition-opacity duration-200 ease-out">
+         <div class="flex flex-row justify-between">
+            <h1 class="text-2xl bg-gray-100 rounded-full pr-3 pl-3">About Us</h1>
+            <button id="closeAbout" class="ms-auto flex items-center justify-center text-body hover:text-heading bg-transparent box-border border border-transparent hover:bg-neutral-secondary-medium focus:ring-4 focus:ring-neutral-tertiary font-medium leading-5 rounded text-sm h-8 w-8 hover:bg-gray-200">
+               <span class="sr-only">Close</span>
+               <svg class="w-8 h-8" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="none" viewBox="0 0 24 24"><path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18 17.94 6M18 18 6.06 6"/></svg>
+            </button>
+         </div>
+         <hr class="mt-1 mb-1">
+         <div class="flex flex-row h-full">
+            <div class="w-3/4 pr-5">
+               <h3 class="text-lg font-bold">Who We Are</h3>
+               <p class="text-m">
+                  Bingus Clothes was founded in 2025 by Adam Pefanis, our CEO and God-Emperor. 
+                  Using his elite JavaScript knowledge, he built and programmed a thousand construction drones 
+                  to build our cutting edge driponomics research facility. 
+                  This very website was designed with a mix of JavaScript and <a href="http://youtube.com/watch?v=dQw4w9WgXcQ" class="text-blue-600 hover:underline">Tailwind CSS</a>, to deliver a UI as sleek as our clothes.
+               </p>
+               <h3 class="text-lg font-bold mt-4">Where to Find Us</h3>
+               <p class="text-m">
+                  Because our CEO is a truly magnanimous man, he has released our code on a GitHub repo for all to marvel at. <a href="http://youtube.com/watch?v=dQw4w9WgXcQ" class="text-blue-600 hover:underline">Have a look at our code here!</a>
+               </p>
+            </div>
+            <div class="h-full w-1/4">
+               <div class="rounded-xl bg-gray-200 h-full shadow-lg">
+                  <div class="bg-[url('images/birb.jpg')] bg-cover bg-bottom h-5/6 rounded-t-xl"></div>
+                  <p class="text-lg text-center m-2 text-gray-700 italic">My bird, used as a placeholder image to fill out this widget.</p>
+               </div>
+               
+            </div>
+         </div>
+      </dialog>
+   </main>
+   <footer class="bg-white font-sans border border-t-2 border-grey-800">
+      <p>🄯 CC BY-SA - Adam Pefanis - 2025</p>
+
+   </footer>
+</body>
+</html>
+
