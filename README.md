@@ -1,5 +1,6 @@
 This website was designed with Javascript and Tailwind.
 
+The site is hosted at [https://apefa883.github.io/COMP3512-Assign2/](https://apefa883.github.io/COMP3512-Assign2/)
 
 # Citations
 ### 67Bnnuy.jpg
