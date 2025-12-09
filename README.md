@@ -9,7 +9,7 @@ boySpeqk0u1. (2025) _All mangos lead to 67_ [Video]. Tiktok. [https://www.tiktok
 [Photograph of several Labubu figurines]. (n.d.). FlyingCarts.in. Retrieved December 1, 2025, from [https://flyingcarts.in/products/mini-labubu-keychain](https://flyingcarts.in/products/mini-labubu-keychain)
 
 ### Birb.jpg
-Pefanis, A. (2025) _Birb_ [Photograph].
+Pefanis, A. (2025). _Birb_ [Photograph].
 
 ### Bottoms.jpg
 Ocdp. (2013) _Cargo Pants_ [Photograph]. Wikipedia Commons. [https://commons.wikimedia.org/wiki/File:Cargo_pants_001.jpg](https://commons.wikimedia.org/wiki/File:Cargo_pants_001.jpg)
